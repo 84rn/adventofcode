@@ -30,7 +30,7 @@ std::istream& operator>>(std::istream& s, Present& p)
 
     std::sort(p.vsize.begin(), p.vsize.end());
 
-    p.area = 2*n1*n2 + 2*n2*n3 + 2*n1*n3;
+    p.area = (2 * n1 * n2) + (2 * n2 * n3) + (2 * n1 * n3);
     p.slack = p.vsize[0] * p.vsize[1];
 
     return s;
@@ -49,7 +49,7 @@ int main()
     while(std::cin >> p)
         vp.push_back(p);    
 
-    std::cout << "Area: " << std::accumulate(vp.begin(), vp.end(), 0, sum_presents) << std::endl;
+    std::cout << "Area of " << vp.size() << " presents: " << std::accumulate(vp.begin(), vp.end(), 0, sum_presents) << std::endl;
 
     exit(0);
 }
