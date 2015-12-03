@@ -24,6 +24,7 @@ std::istream& operator>>(std::istream& s, Present& p)
 
     stream >> n1 >> c >> n2 >> c >> n3;
 
+    p.vsize.clear();
     p.vsize.push_back(n1);
     p.vsize.push_back(n2);
     p.vsize.push_back(n3);
